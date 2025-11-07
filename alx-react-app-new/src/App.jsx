@@ -79,3 +79,44 @@ function App() {
 }
 
 export default App;
+import Header from './components/Header';
+import MainContent from './components/MainContent';
+import Footer from './components/Footer';
+import UserProfile from './components/UserProfile';
+import Counter from './components/Counter';
+
+function App() {
+  return (
+    <div style={{ 
+      display: 'flex',
+      flexDirection: 'column',
+      minHeight: '100vh',
+      fontFamily: 'Arial, sans-serif'
+    }}>
+      <Header />
+      <MainContent />
+      
+      {/* Counter Component */}
+      <Counter />
+      
+      <div style={{ 
+        padding: '20px',
+        backgroundColor: 'white'
+      }}>
+        <UserProfile 
+          name="Alice" 
+          age="25" 
+          bio="Loves hiking and photography" 
+        />
+        <UserProfile 
+          name="Bob" 
+          age="30" 
+          bio="Enjoys cooking and traveling" 
+        />
+      </div>
+      <Footer />
+    </div>
+  );
+}
+
+export default App;
