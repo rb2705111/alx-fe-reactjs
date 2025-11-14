@@ -52,3 +52,34 @@ function App() {
 }
 
 export default App;
+import { BrowserRouter, Routes, Route, useParams, useNavigate } from 'react-router-dom';
+import RecipeList from './components/RecipeList';
+import AddRecipeForm from './components/AddRecipeForm';
+import RecipeDetails from './components/RecipeDetails';
+
+function App() {
+  return (
+    <BrowserRouter>
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-8 px-4">
+        <div className="max-w-4xl mx-auto">
+          <header className="text-center mb-8">
+            <h1 className="text-4xl font-bold text-gray-800 mb-2">Recipe Sharing App</h1>
+            <p className="text-gray-600">Share and discover amazing recipes</p>
+          </header>
+          
+          <Routes>
+            <Route path="/" element={
+              <>
+                <RecipeList />
+                <AddRecipeForm />
+              </>
+            } />
+            <Route path="/recipe/:id" element={<RecipeDetails />} />
+          </Routes>
+        </div>
+      </div>
+    </BrowserRouter>
+  );
+}
+
+export default App;
