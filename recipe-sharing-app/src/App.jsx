@@ -137,3 +137,49 @@ function App() {
 }
 
 export default App;
+import RecipeList from './components/RecipeList';
+import AddRecipeForm from './components/AddRecipeForm';
+import FavoritesList from './components/FavoritesList';
+import RecommendationsList from './components/RecommendationsList';
+import './App.css';
+
+function App() {
+  return (
+    <div className="App">
+      <header>
+        <h1>Recipe Sharing App</h1>
+        <p>Share and discover amazing recipes</p>
+      </header>
+      
+      {/* Main recipe list with favorite buttons */}
+      <RecipeList />
+      
+      {/* Form to add new recipes */}
+      <AddRecipeForm />
+      
+      {/* User's favorite recipes */}
+      <FavoritesList />
+      
+      {/* Personalized recommendations */}
+      <RecommendationsList />
+    </div>
+  );
+}
+
+export default App;
+```
+
+## 📁 Complete File Structure:
+```
+recipe-sharing-app/
+├── src/
+│   ├── components/
+│   │   ├── recipeStore.js           ← Updated with favorites & recommendations
+│   │   ├── RecipeList.jsx           ← Updated with favorite toggle
+│   │   ├── AddRecipeForm.jsx
+│   │   ├── FavoritesList.jsx        ← NEW
+│   │   └── RecommendationsList.jsx  ← NEW
+│   ├── App.jsx                      ← Updated with new components
+│   └── main.jsx
+├── package.json
+└── vite.config.js

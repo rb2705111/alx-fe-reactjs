@@ -121,3 +121,46 @@ const RecipeList = () => {
 };
 
 export default RecipeList;
+import useRecipeStore from './recipeStore';
+
+const RecipeList = () => {
+  const recipes = useRecipeStore((state) => state.recipes);
+  const favorites = useRecipeStore((state) => state.favorites);
+  const addFavorite = useRecipeStore((state) => state.addFavorite);
+  const removeFavorite = useRecipeStore((state) => state.removeFavorite);
+
+  // Check if a recipe is already favorited
+  const isFavorite = (recipeId) => favorites.includes(recipeId);
+
+  // Toggle favorite status
+  const toggleFavorite = (recipeId) => {
+    if (isFavorite(recipeId)) {
+      removeFavorite(recipeId);
+    } else {
+      addFavorite(recipeId);
+    }
+  };
+
+  return (
+    <div>
+      <h2>Recipe Collection</h2>
+      {recipes.length === 0 ? (
+        <p>No recipes yet. Add your first recipe below!</p>
+      ) : (
+        <div>
+          {recipes.map((recipe) => (
+            <div key={recipe.id}>
+              <h3>{recipe.title}</h3>
+              <p>{recipe.description}</p>
+              <button onClick={() => toggleFavorite(recipe.id)}>
+                {isFavorite(recipe.id) ? '❤️ Favorited' : '🤍 Add to Favorites'}
+              </button>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default RecipeList;
