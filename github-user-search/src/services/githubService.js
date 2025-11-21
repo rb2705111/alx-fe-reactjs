@@ -15,17 +15,12 @@ if (import.meta.env.VITE_GITHUB_API_KEY) {
     `token ${import.meta.env.VITE_GITHUB_API_KEY}`;
 }
 
-export const searchUsers = async (username) => {
-  try {
-    const response = await githubAPI.get(`/search/users?q=${username}`);
-    return response.data;
-  } catch (error) {
-    console.error('Error searching users:', error);
-    throw error;
-  }
-};
-
-export const getUserDetails = async (username) => {
+/**
+ * Fetches user data from GitHub API
+ * @param {string} username - The GitHub username to search for
+ * @returns {Promise<Object>} - The user data object
+ */
+export const fetchUserData = async (username) => {
   try {
     const response = await githubAPI.get(`/users/${username}`);
     return response.data;
