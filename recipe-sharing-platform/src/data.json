@@ -3,24 +3,103 @@
     "id": 1,
     "title": "Spaghetti Carbonara",
     "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-    "image": "https://via.placeholder.com/150"
+    "image": "https://via.placeholder.com/600x300?text=Carbonara",
+    "ingredients": [
+      "400g spaghetti",
+      "200g pancetta or guanciale",
+      "3 large eggs",
+      "100g Pecorino Romano cheese, grated",
+      "50g Parmesan cheese, grated",
+      "Freshly ground black pepper",
+      "Salt (for pasta water)"
+    ],
+    "instructions": [
+      "Bring a large pot of salted water to boil. Cook spaghetti according to package instructions until al dente.",
+      "While pasta cooks, cut pancetta into small pieces and cook in a pan over medium heat until crispy. Remove from heat.",
+      "In a bowl, whisk eggs, Pecorino, Parmesan, and plenty of black pepper.",
+      "Reserve 1/2 cup pasta water, then drain pasta.",
+      "Immediately add hot pasta to the egg mixture, stirring quickly to avoid scrambling. Add pancetta and a splash of pasta water to loosen.",
+      "Serve immediately with extra cheese and black pepper."
+    ]
   },
   {
     "id": 2,
     "title": "Chicken Tikka Masala",
     "summary": "Chunks of grilled chicken (tikka) cooked in a smooth, buttery, creamy tomato-based gravy.",
-    "image": "https://via.placeholder.com/150"
+    "image": "https://via.placeholder.com/600x300?text=Tikka+Masala",
+    "ingredients": [
+      "500g boneless chicken thighs",
+      "1 cup plain yogurt",
+      "2 tbsp lemon juice",
+      "2 tsp ground cumin",
+      "2 tsp ground turmeric",
+      "2 tsp garam masala",
+      "1 large onion, finely chopped",
+      "3 garlic cloves, minced",
+      "1 tbsp ginger, grated",
+      "400g canned tomatoes",
+      "200ml heavy cream",
+      "Fresh cilantro for garnish"
+    ],
+    "instructions": [
+      "Marinate chicken in yogurt, lemon juice, cumin, turmeric, and half the garam masala for at least 1 hour.",
+      "Grill or pan-sear chicken until cooked through. Set aside.",
+      "In a large pan, sauté onion until soft. Add garlic and ginger; cook 1 minute.",
+      "Add canned tomatoes and simmer 10 minutes. Blend until smooth (optional).",
+      "Return sauce to pan, stir in cream and remaining garam masala.",
+      "Add chicken pieces, simmer 5–10 minutes. Garnish with cilantro and serve with rice or naan."
+    ]
   },
   {
     "id": 3,
     "title": "Vegetable Stir Fry",
     "summary": "A quick and healthy mix of colorful vegetables sautéed in soy-ginger sauce.",
-    "image": "https://via.placeholder.com/150"
+    "image": "https://via.placeholder.com/600x300?text=Stir+Fry",
+    "ingredients": [
+      "1 bell pepper, sliced",
+      "1 carrot, julienned",
+      "1 cup broccoli florets",
+      "1 cup snap peas",
+      "2 tbsp soy sauce",
+      "1 tbsp sesame oil",
+      "1 tsp grated ginger",
+      "2 garlic cloves, minced",
+      "1 tbsp vegetable oil",
+      "Sesame seeds (optional)"
+    ],
+    "instructions": [
+      "Heat vegetable oil in a wok or large skillet over high heat.",
+      "Add harder vegetables (carrots, broccoli) first; stir-fry 2 minutes.",
+      "Add remaining vegetables; cook 2–3 minutes until crisp-tender.",
+      "Push vegetables to side, add ginger and garlic; cook 30 seconds.",
+      "Stir in soy sauce and sesame oil. Toss everything together.",
+      "Serve hot over rice, garnished with sesame seeds."
+    ]
   },
   {
     "id": 4,
     "title": "Chocolate Chip Cookies",
     "summary": "Soft, chewy cookies loaded with melty chocolate chips — a timeless favorite.",
-    "image": "https://via.placeholder.com/150"
+    "image": "https://via.placeholder.com/600x300?text=Chocolate+Chip+Cookies",
+    "ingredients": [
+      "2 1/4 cups all-purpose flour",
+      "1 tsp baking soda",
+      "1 tsp salt",
+      "1 cup unsalted butter, softened",
+      "3/4 cup granulated sugar",
+      "3/4 cup brown sugar",
+      "2 large eggs",
+      "2 tsp vanilla extract",
+      "2 cups chocolate chips"
+    ],
+    "instructions": [
+      "Preheat oven to 375°F (190°C). Line baking sheets with parchment.",
+      "In a bowl, whisk flour, baking soda, and salt. Set aside.",
+      "In a large bowl, beat butter and sugars until fluffy. Add eggs and vanilla; mix well.",
+      "Gradually add dry ingredients to wet, mixing until just combined.",
+      "Fold in chocolate chips.",
+      "Drop tablespoon-sized dough balls onto sheets. Bake 9–11 minutes until golden.",
+      "Cool on sheet for 2 minutes, then transfer to rack."
+    ]
   }
 ]
