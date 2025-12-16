@@ -18,6 +18,16 @@ export default function HomePage() {
           🍲 Recipe Sharing Platform
         </h1>
 
+// Inside HomePage.jsx, near the top (after the <h1>)
+<div className="text-center mb-8">
+  <Link
+    to="/add"
+    className="inline-block bg-orange-600 hover:bg-orange-700 text-white font-medium py-2 px-6 rounded-lg transition-colors"
+  >
+    ➕ Add New Recipe
+  </Link>
+</div>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {recipes.map((recipe) => (
             <Link
