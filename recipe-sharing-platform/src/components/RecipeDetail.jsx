@@ -61,7 +61,12 @@ export default function RecipeDetail() {
             </section>
 
             <section>
-              <h2 className="text-xl font-semibold text-orange-700 mb-3 flex items-center">
-                👩‍🍳 Instructions
-              </h2>
-              <ol
+  <h2 className="text-xl font-semibold text-orange-700 mb-3">
+    Instructions
+  </h2>
+  <ol className="list-decimal list-inside space-y-2 text-gray-700">
+    {recipe.instructions.map((step, index) => (
+      <li key={index} className="leading-relaxed">{step}</li>
+    ))}
+  </ol>
+</section>
