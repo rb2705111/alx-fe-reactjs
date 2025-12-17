@@ -99,7 +99,7 @@ export default function AddRecipeForm() {
           {/* Instructions */}
           <div className="mb-8">
             <label htmlFor="instructions" className="block text-gray-700 font-medium mb-2">
-              Preparation Steps * <span className="text-gray-500 text-sm">(one per line)</span>
+              Preparation Steps * <span className="text-gray-500 text-sm">(one step per line)</span>
             </label>
             <textarea
               id="instructions"
@@ -109,7 +109,7 @@ export default function AddRecipeForm() {
               className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:outline-none ${
                 errors.instructions ? 'border-red-500' : 'border-gray-300'
               }`}
-              placeholder="1. Boil water&#10;2. Cook pasta&#10;3. Sauté mushrooms..."
+  placeholder="List your recipe steps here (one per line)..."
             />
             {errors.instructions && (
               <p className="mt-1 text-red-600 text-sm">{errors.instructions}</p>
