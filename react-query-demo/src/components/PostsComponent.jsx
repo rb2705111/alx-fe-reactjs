@@ -1,5 +1,5 @@
 // src/components/PostsComponent.jsx
-import { useQuery, useQueryClient } from '@tanstack/react-query';
+import { useQuery } from '@tanstack/react-query';
 
 async function fetchPosts() {
   const res = await fetch('https://jsonplaceholder.typicode.com/posts');
@@ -10,15 +10,19 @@ async function fetchPosts() {
 }
 
 export default function PostsComponent() {
-  const queryClient = useQueryClient();
-  const { data, error, isLoading, refetch } = useQuery({
+  const { data, isError, error, isLoading, refetch } = useQuery({
     queryKey: ['posts'],
     queryFn: fetchPosts,
-    staleTime: 10000, // 10 seconds
+    staleTime: 10000,
   });
 
-  if (isLoading) return <div className="p-8 text-center">Loading posts...</div>;
-  if (error) return <div className="p-8 text-center text-red-600">Error: {error.message}</div>;
+  if (isLoading) {
+    return <div className="p-8 text-center">Loading posts...</div>;
+  }
+
+  if (isError) {
+    return <div className="p-8 text-center text-red-600">Error: {error.message}</div>;
+  }
 
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4">
@@ -40,10 +44,6 @@ export default function PostsComponent() {
               <p className="text-gray-600 mt-2">{post.body}</p>
             </div>
           ))}
-        </div>
-
-        <div className="mt-6 text-sm text-gray-500">
-          💡 Note: Only showing first 10 posts. Data is cached for 10 seconds.
         </div>
       </div>
     </div>
