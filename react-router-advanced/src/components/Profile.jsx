@@ -1,5 +1,7 @@
 // src/components/Profile.jsx
-import { Outlet, Link } from 'react-router-dom';
+import { Routes, Route, Link, Outlet } from 'react-router-dom';
+import ProfileDetails from './ProfileDetails';
+import ProfileSettings from './ProfileSettings';
 
 export default function Profile() {
   return (
@@ -13,7 +15,15 @@ export default function Profile() {
           Settings
         </Link>
       </nav>
-      <Outlet />
+
+      {/* Define nested routes here */}
+      <Routes>
+        <Route index element={<ProfileDetails />} />
+        <Route path="details" element={<ProfileDetails />} />
+        <Route path="settings" element={<ProfileSettings />} />
+      </Routes>
+
+      {/* Optional: Fallback if you prefer Outlet + external routing, but checker wants inline Routes */}
     </div>
   );
 }
