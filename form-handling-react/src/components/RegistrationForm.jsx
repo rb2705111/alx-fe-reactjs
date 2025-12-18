@@ -1,4 +1,4 @@
-// src/components/RegistrationForm.jsx
+// src/components/Registration.1.jsx
 import { useState } from 'react';
 
 export default function RegistrationForm() {
@@ -9,18 +9,18 @@ export default function RegistrationForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     let errors = {};
-    
+
     if (!username) errors.username = 'Username is required';
     if (!email) errors.email = 'Email is required';
     if (!password) errors.password = 'Password is required';
-    
+
     if (Object.keys(errors).length > 0) {
       setErrors(errors);
       return;
     }
-    
+
     alert('User registered successfully!');
     setErrors({});
   };
@@ -55,4 +55,19 @@ export default function RegistrationForm() {
         <label className="block mb-1">Password</label>
         <input
           type="password"
-          value
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          className="w-full p-2 border rounded"
+        />
+        {errors.password && <p className="text-red-500 text-sm">{errors.password}</p>}
+      </div>
+
+      <button
+        type="submit"
+        className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+      >
+        Register
+      </button>
+    </form>
+  );
+}
