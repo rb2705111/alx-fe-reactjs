@@ -7,23 +7,22 @@ export default function RegistrationForm() {
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({});
 
-  const validate = () => {
-    const newErrors = {};
-    if (!username.trim()) newErrors.username = 'Username is required';
-    if (!email.trim()) newErrors.email = 'Email is required';
-    else if (!/\S+@\S+\.\S+/.test(email)) newErrors.email = 'Email is invalid';
-    if (!password) newErrors.password = 'Password is required';
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (validate()) {
-      // Mock API call
-      console.log('Submitting user:', { username, email, password });
-      alert('User registered successfully (controlled form)!');
+    
+    let errors = {};
+    
+    if (!username) errors.username = 'Username is required';
+    if (!email) errors.email = 'Email is required';
+    if (!password) errors.password = 'Password is required';
+    
+    if (Object.keys(errors).length > 0) {
+      setErrors(errors);
+      return;
     }
+    
+    alert('User registered successfully!');
+    setErrors({});
   };
 
   return (
@@ -56,19 +55,4 @@ export default function RegistrationForm() {
         <label className="block mb-1">Password</label>
         <input
           type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className="w-full p-2 border rounded"
-        />
-        {errors.password && <p className="text-red-500 text-sm">{errors.password}</p>}
-      </div>
-
-      <button
-        type="submit"
-        className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
-      >
-        Register
-      </button>
-    </form>
-  );
-}
+          value
