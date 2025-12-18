@@ -3,8 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
 import BlogPost from './components/BlogPost';
 import Profile from './components/Profile';
-import ProfileDetails from './components/ProfileDetails';
-import ProfileSettings from './components/ProfileSettings';
 import ProtectedRoute from './components/ProtectedRoute';
 import Login from './components/Login';
 
@@ -22,7 +20,7 @@ function App() {
             </ProtectedRoute>
           }
         />
-        <Route path="/post/:id" element={<BlogPost />} />
+        <Route path="/blog/:id" element={<BlogPost />} /> {/* ✅ Now matches "/blog/:id" */}
       </Routes>
     </Router>
   );
