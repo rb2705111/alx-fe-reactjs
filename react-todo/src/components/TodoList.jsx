@@ -10,70 +10,36 @@ export default function TodoList() {
 
   const addTodo = (e) => {
     e.preventDefault();
-    if (inputValue.trim() === '') return;
-    const newTodo = {
-      id: Date.now(),
-      text: inputValue.trim(),
-      completed: false
-    };
-    setTodos([...todos, newTodo]);
+    if (!inputValue.trim()) return;
+    setTodos([...todos, { id: Date.now(), text: inputValue.trim(), completed: false }]);
     setInputValue('');
   };
 
   const toggleTodo = (id) => {
-    setTodos(
-      todos.map(todo =>
-        todo.id === id ? { ...todo, completed: !todo.completed } : todo
-      )
-    );
+    setTodos(todos.map(t => t.id === id ? { ...t, completed: !t.completed } : t));
   };
 
   const deleteTodo = (id) => {
-    setTodos(todos.filter(todo => todo.id !== id));
+    setTodos(todos.filter(t => t.id !== id));
   };
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-white rounded shadow mt-10">
-      <h2 className="text-2xl font-bold mb-4">Todo List</h2>
-
-      {/* Add Form */}
-      <form onSubmit={addTodo} className="mb-6">
+    <div>
+      <form onSubmit={addTodo}>
         <input
-          type="text"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           placeholder="Add a new todo"
-          className="w-full p-2 border border-gray-300 rounded mb-2"
         />
-        <button
-          type="submit"
-          className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
-        >
-          Add Todo
-        </button>
+        <button type="submit">Add Todo</button>
       </form>
-
-      {/* Todo List */}
-      <ul className="space-y-2">
+      <ul>
         {todos.map(todo => (
-          <li
-            key={todo.id}
-            className={`flex justify-between items-center p-2 border rounded ${
-              todo.completed ? 'bg-green-100 line-through' : 'bg-gray-50'
-            }`}
-          >
-            <span
-              onClick={() => toggleTodo(todo.id)}
-              className="cursor-pointer flex-grow"
-            >
+          <li key={todo.id}>
+            <span onClick={() => toggleTodo(todo.id)} style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
               {todo.text}
             </span>
-            <button
-              onClick={() => deleteTodo(todo.id)}
-              className="text-red-600 hover:text-red-800 ml-2"
-            >
-              Delete
-            </button>
+            <button onClick={() => deleteTodo(todo.id)}>Delete</button>
           </li>
         ))}
       </ul>
